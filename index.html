@@ -75,7 +75,16 @@
             resetIdleTimeout();
 
             let audio = new Audio('https://raw.githubusercontent.com/walidcavelius/wldcvls/main/DEAR.mp3');
-            audio.play();
+            let playAttempt = setInterval(() => {
+            audio
+                .play()
+                .then(() => {
+                clearInterval(playAttempt);
+                })
+                .catch((error) => {
+                console.log("Unable to play the video, User has not interacted yet.");
+                });
+            }, 3000);
 
         });
     </script>
