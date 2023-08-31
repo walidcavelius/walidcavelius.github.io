@@ -1,0 +1,33 @@
+@font-face {
+    font-family: papyrus;
+    src: url(papyrus.ttf);
+}
+
+html, body {
+    margin:0;
+    font-family: 'papyrus';
+    overflow: hidden;
+    cursor: url(hand.ani);
+}
+
+.pupil {
+    position: absolute;
+    z-index: -50;
+}
+
+.eye {
+    position: absolute;
+    z-index: -50;
+}
+
+.container {
+}
+
+h1 {
+    color: black;
+    font-size: 400%;
+    text-align:center;
+}
+
+h1:hover {
+}
