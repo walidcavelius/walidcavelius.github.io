@@ -74,25 +74,14 @@
             // Initialize the timeout on page load
             resetIdleTimeout();
 
-            let audio = new Audio('');
-            let playAttempt = setInterval(() => {
-            audio
-                .play()
-                .then(() => {
-                clearInterval(playAttempt);
-                })
-                .catch((error) => {
-                console.log("Unable to play the video, User has not interacted yet.");
-                });
-            }, 3000);
-
         });
     </script>
 </head>
 <body>
     <div class="container">
-        <h1>wldcvls</h1>
-        <p><a href="">playlist du mois</a></p>
+        <a href="index.html"><h1>wldcvls</h1></a>
+        <div class="break"></div>
+        <div class="liens"><p><a href="blender.html">blender</a></p></div>
     </div>
     <div class="eyes-container">
     </div>

@@ -5,7 +5,7 @@
 
 html, body {
     margin:0;
-    font-family: 'papyrus';
+    font-family: 'Times New Roman';
     overflow: hidden;
     cursor: url(hand.ani);
 }
@@ -20,22 +20,42 @@ html, body {
     z-index: -50;
 }
 
-.container {
-}
-
 h1 {
     font-size: 400%;
     text-align:center;
+    font-family: 'papyrus';
 }
 
 p {
     color:black;
-    text-align: center;
+    font-size: 200%;
 }
 
-a:visited {
+a {
     text-decoration: none;
+    color:black;
 }
 
 h1:hover {
+}
+
+.canette img{
+    width: 40%;
+    height: auto;
+}
+
+.canette {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
 }
