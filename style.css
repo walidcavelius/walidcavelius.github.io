@@ -8,6 +8,7 @@ html, body {
     font-family: 'Times New Roman';
     overflow: hidden;
     cursor: url(hand.ani);
+    color: white;
 }
 
 .pupil {
@@ -27,13 +28,13 @@ h1 {
 }
 
 p {
-    color:black;
+    color:white;
     font-size: 200%;
 }
 
 a {
     text-decoration: none;
-    color:black;
+    color:white;
 }
 
 h1:hover {

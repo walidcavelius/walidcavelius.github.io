@@ -9,19 +9,19 @@
     <script>
         $(document).ready(function() {
             
-            const EYE_WIDTH = 190;
-            const EYE_HEIGHT = 90;
-            
             let column = 0;
             let row = 0;
 
             let wWindow = window.innerWidth; // browser width
             let hWindow = window.innerHeight;
 
+            const EYE_WIDTH = wWindow*0.065;
+            const EYE_HEIGHT = EYE_WIDTH;
+
             while (hWindow/EYE_HEIGHT > row) {
                 while (wWindow/EYE_WIDTH > column) {
-                    $(".eyes-container").append('<img class="eye" src="eye_bw.png" alt="Eye" style="top:'+row*EYE_HEIGHT+'px; left:'+column*EYE_WIDTH+'px">');
-                    $(".eyes-container").append('<img class="pupil" src="pupil.png" alt="Pupil" style="top:' + (row * EYE_HEIGHT + 37) + 'px; left:' + (column * EYE_WIDTH + 94) + 'px">');
+                    $(".eyes-container").append('<img class="eye" src="unnamed.jpg" alt="Eye" style="width:6.5%; height:auto;top:'+row*EYE_HEIGHT+'px; left:'+column*EYE_WIDTH+'px">');
+                    $(".eyes-container").append('<img class="pupil" src="eyeball.png" alt="Pupil" style="width:2%; height:auto; top:' + (row * EYE_HEIGHT + wWindow*0.02) + 'px; left:' + (column * EYE_WIDTH + wWindow*0.0215) + 'px">');
                     column++;
                 }
                 column = 0;
@@ -43,11 +43,15 @@
                     const deltaX = mouseX - eyeCenterX;
                     const deltaY = mouseY - eyeCenterY;
 
-                    const angle = Math.atan2(deltaY, deltaX);
-                    const distance = Math.min(eyeRect.width / 8.5, eyeRect.height / 8.5);
+                    const ovalXRadius = eyeRect.width / 5; // Rayon horizontal
+                    const ovalYRadius = eyeRect.height / 8.5;   // Rayon vertical
 
-                    const pupilX = distance * Math.cos(angle);
-                    const pupilY = distance * Math.sin(angle);
+                    // Calculer l'angle de la souris par rapport au centre de l'œil
+                    const angle = Math.atan2(deltaY / ovalYRadius, deltaX / ovalXRadius);
+
+                    // Calculer les nouvelles coordonnées x et y pour la pupille
+                    const pupilX = ovalXRadius * Math.cos(angle);
+                    const pupilY = ovalYRadius * Math.sin(angle);
 
                     pupil.style.transform = `translate(${pupilX}px, ${pupilY}px)`;
                 });
