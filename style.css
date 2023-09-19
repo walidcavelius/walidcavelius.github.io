@@ -24,9 +24,17 @@ html, body {
 }
 
 h1 {
-    color: black;
     font-size: 400%;
     text-align:center;
+}
+
+p {
+    color:black;
+    text-align: center;
+}
+
+a:visited {
+    text-decoration: none;
 }
 
 h1:hover {
