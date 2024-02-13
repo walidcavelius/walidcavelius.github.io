@@ -1,71 +1,32 @@
-@font-face {
-    font-family: papyrus;
-    src: url(papyrus.ttf);
+body {
+    background-color:rgb(250 250 250);
+    color:rgb(38 38 38);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
 }
 
-html, body {
-    margin:0;
-    font-family: 'Times New Roman';
-    overflow: hidden;
-    cursor: url(hand.ani);
-    color: white;
+a:visited {
+    color: rgb(38 38 38);
 }
-
-.pupil {
-    position: absolute;
-    z-index: -50;
-}
-
-.eye {
-    position: absolute;
-    z-index: -50;
+a {
+    color: rgb(38 38 38);
+    text-decoration: none;
 }
 
 h1 {
-    font-size: 400%;
-    text-align:center;
-    font-family: 'papyrus';
-}
-
-p {
-    color:white;
-    font-size: 200%;
-}
-
-a {
     text-decoration: none;
-    color:white;
+    font-size: 16px;
 }
-
-h1:hover {
-}
-
-.canette img{
-    width: 40%;
-    height: auto;
-}
-
-.canette {
-    text-align: center;
-}
-
+  
 .container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
 }
 
-.break {
-    flex-basis: 100%;
-    height: 0;
+.container-row {
+    display: flex;
+    margin: 200px;
+    text-align: center;
+    justify-content: center;
 }
-
-@media only screen and (max-width: 600px)  
-{ 
- 
-    .hidden  
-    { 
-         display: hidden; 
-    } 
-} 

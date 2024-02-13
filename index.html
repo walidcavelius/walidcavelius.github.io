@@ -4,91 +4,17 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <title>wldcvls</title>
-    <link rel="icon" href="eye.png">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            
-            let column = 0;
-            let row = 0;
-
-            let wWindow = window.innerWidth; // browser width
-            let hWindow = window.innerHeight;
-
-            const EYE_WIDTH = wWindow*0.065;
-            const EYE_HEIGHT = EYE_WIDTH;
-
-            while (hWindow/EYE_HEIGHT > row) {
-                while (wWindow/EYE_WIDTH > column) {
-                    $(".eyes-container").append('<img class="eye" src="unnamed.jpg" alt="Eye" style="width:6.5%; height:auto;top:'+row*EYE_HEIGHT+'px; left:'+column*EYE_WIDTH+'px">');
-                    $(".eyes-container").append('<img class="pupil" src="eyeball.png" alt="Pupil" style="width:2%; height:auto; top:' + (row * EYE_HEIGHT + wWindow*0.02) + 'px; left:' + (column * EYE_WIDTH + wWindow*0.0215) + 'px">');
-                    column++;
-                }
-                column = 0;
-                row++;
-            }
-
-            const pupils = document.querySelectorAll('.pupil');
-
-            document.addEventListener('mousemove', (e) => {
-                pupils.forEach((pupil, index) => {
-                    const eye = pupil.previousElementSibling;
-                    const eyeRect = eye.getBoundingClientRect();
-                    const eyeCenterX = eyeRect.left + eyeRect.width / 2;
-                    const eyeCenterY = eyeRect.top + eyeRect.height / 2;
-
-                    const mouseX = e.clientX;
-                    const mouseY = e.clientY;
-
-                    const deltaX = mouseX - eyeCenterX;
-                    const deltaY = mouseY - eyeCenterY;
-
-                    const ovalXRadius = eyeRect.width / 3.5; // Rayon horizontal
-                    const ovalYRadius = eyeRect.height / 7;   // Rayon vertical
-
-                    // Calculer l'angle de la souris par rapport au centre de l'œil
-                    const angle = Math.atan2(deltaY / ovalYRadius, deltaX / ovalXRadius);
-
-                    // Calculer les nouvelles coordonnées x et y pour la pupille
-                    const pupilX = ovalXRadius * Math.cos(angle);
-                    const pupilY = ovalYRadius * Math.sin(angle);
-
-                    pupil.style.transform = `translate(${pupilX}px, ${pupilY}px)`;
-                });
-            });
-
-            let idleTimeout;
-            const idleTime = 1500; // 3 seconds in milliseconds
-
-            function resetIdleTimeout() {
-            clearTimeout(idleTimeout);
-            idleTimeout = setTimeout(function() {
-                // This code will be executed when the user hasn't moved the mouse for 3 seconds
-                console.log("User has been idle for 3 seconds.");
-                pupils.forEach((pupil, index) => {
-                    pupil.style.transform = `translate(0, 0)`;
-                });
-                // Your additionald actions or logic here
-            }, idleTime);
-            }
-
-            // Reset the timeout whenever the user moves the mouse
-            document.addEventListener("mousemove", resetIdleTimeout);
-
-            // Initialize the timeout on page load
-            resetIdleTimeout();
-
-        });
-    </script>
 </head>
 <body>
-    <div class="container">
-        <a href="index.html"><h1>wldcvls</h1></a>
-        <div class="break"></div>
-        <div class="liens"><p><a href="blender.html">blender</a></p>
-        <p><a href="images.html">images</a></p>
+    <div class="container-row">
+        <div class="container">
+            <h1><a href="/">walid cavelius</a></h1>
+            <div>
+                <a href="cs.html">cs</a>
+                <a href="art.html">art</a>
+                <a target="_blank" href="resume.pdf">resume</a>
+                <a href="about.html">about</a>
+            </div>
         </div>
-    </div>
-    <div class="eyes-container">
     </div>
 </body>
