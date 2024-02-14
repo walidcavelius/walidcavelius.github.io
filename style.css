@@ -17,6 +17,10 @@ h1 {
     text-decoration: none;
     font-size: 16px;
 }
+
+p {
+    margin:0;
+}
   
 .container {
     display: flex;
@@ -26,7 +30,16 @@ h1 {
 
 .container-row {
     display: flex;
-    margin: 200px;
+    margin: 5vw;
     text-align: center;
     justify-content: center;
 }
+
+.project {
+    margin-bottom: 5vw;
+}
+
+.project img {
+
+    width: 60%;
+}  
